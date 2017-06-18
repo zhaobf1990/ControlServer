@@ -67,8 +67,8 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     {
                         SWSDataContext db = new SWSDataContext(ConnectStringHelper.GetConnection(SysConfig.userProfile.DbAddress, org.DBName, SysConfig.userProfile.DbUserName, SysConfig.userProfile.DbPassword));
                         添加DTU控制任务(db);
-                        添加广岱控制任务(db, org.DBName,org.gdServerCfg);
-                        添加广岱透传控制任务(db, org.DBName,org.gdServerCfg);
+                        添加广岱控制任务(db, org.DBName, org.gdServerCfg);
+                        添加广岱透传控制任务(db, org.DBName, org.gdServerCfg);
                     }
                     catch (Exception ex)
                     {
@@ -95,7 +95,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                         //如果站点在【任务队列】和【线程里】里已经存在了，就不继续添加
                         if (!HasExistClientInPool(stationid))
                         {
-                            Args arg = new Args() { dbName = dbname, station_id = stationid,gdServerCfg=gdServerCfg };
+                            Args arg = new Args() { dbName = dbname, station_id = stationid, gdServerCfg = gdServerCfg };
                             PoolA.AddTaskItem(new WaitCallback(ExecuteGuangDaiOrder), arg);
                         }
                     }
@@ -197,7 +197,12 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     return;
                 }
                 //把那些不需要执行了的数据 state=1  就当这行指令已经执行过了
-                db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
+                List<int> giveUpCommands = db.ExecuteQuery<int>("SELECT id FROM dbo.control_command  WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ").ToList();
+                if (giveUpCommands.Count > 0)
+                {
+                    db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE id in(" + string.Join(", ", giveUpCommands) + ")");
+                } 
+                //db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
                 //获取需要执行的指令
                 List<control_command> commands = db.ExecuteQuery<control_command>("SELECT * FROM dbo.control_command WHERE id IN(SELECT MAX(id) as id  FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND communication_mode=4  AND  tp is NULL AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ORDER BY add_datetime").ToList();
 
@@ -323,7 +328,13 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     return;
                 }
                 //把那些不需要执行了的数据 state=1  就当这行指令已经执行过了
-                db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
+                List<int> giveUpCommands = db.ExecuteQuery<int>("SELECT id FROM dbo.control_command  WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ").ToList();
+                if (giveUpCommands.Count > 0)
+                {
+                    db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE id in(" + string.Join(", ", giveUpCommands) + ")");
+                }
+                //db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
+
                 //获取需要执行的指令
                 List<control_command> commands = db.ExecuteQuery<control_command>("SELECT * FROM dbo.control_command WHERE id IN(SELECT MAX(id) as id  FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND communication_mode=5  AND tp is Null AND  (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ORDER BY add_datetime").ToList();
 
@@ -429,10 +440,12 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     }
                 }
             }
-            catch (Exception ex) {
-                 Args arg = (Args)state;
-                 LogMg.AddError("异常数据库是：" + arg.dbName + "   站点id=" + arg.station_id);
-                LogMg.AddError(ex); }
+            catch (Exception ex)
+            {
+                Args arg = (Args)state;
+                LogMg.AddError("异常数据库是：" + arg.dbName + "   站点id=" + arg.station_id);
+                LogMg.AddError(ex);
+            }
         }
 
         /// <summary>
@@ -462,16 +475,14 @@ namespace 服务器端接收程序.MyForm.GPRSControl
 
                     takePhoto(db, client.StationId, client);
 
-                    try
+                    //把那些不需要执行了的数据 state=1  就当这行指令已经执行过了
+                    List<int> giveUpCommands = db.ExecuteQuery<int>("SELECT id FROM dbo.control_command  WHERE station_id=" + client.StationId + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + client.StationId + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ").ToList();
+                    if (giveUpCommands.Count > 0)
                     {
-                        //这句代码老是会出现   "事务(进程 ID 476)与另一个进程被死锁在 锁 | 通信缓冲区 资源上，并且已被选作死锁牺牲品。请重新运行该事务。"
-                        //把那些不需要执行了的数据 state=1  就当这行指令已经执行过了
-                        db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + client.StationId + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + client.StationId + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
-                       }
-                    catch (Exception ex)
-                    {
-                        LogMg.AddError(ex);
+                        db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE id in(" + string.Join(", ", giveUpCommands) + ")");
                     }
+                    //db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + client.StationId + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + client.StationId + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
+
                     //获取需要执行的指令
                     List<control_command> commands = db.ExecuteQuery<control_command>("SELECT * FROM dbo.control_command WHERE id IN(SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + client.StationId + "  AND communication_mode=2 AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ORDER BY add_datetime").ToList();
 

@@ -9632,6 +9632,7 @@
     <Test StationUnique="1174" StationId="355" RegisterNo="0" TestId="8187" 备注="站点掉线告警" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1175" StationId="356" RegisterNo="169" TestId="8190" 备注="站点断电告警" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1175" StationId="356" RegisterNo="165" TestId="8195" 备注="电量" Multiple="0.001" FunctionCode="3" ReceiveTimeout="3000" DataType="2" Address="1" Min="0.01" Max="100000" AddNumber="0" />
+    <Test StationUnique="1175" StationId="356" RegisterNo="164" TestId="8196" 备注="流量计" Multiple="0.001" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="100000" AddNumber="0" />
     <Test StationUnique="1175" StationId="356" RegisterNo="640" TestId="8200" 备注="考勤" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="2" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1175" StationId="356" RegisterNo="60" TestId="8201" 备注="进水池浮球" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1175" StationId="356" RegisterNo="61" TestId="8202" 备注="出水池浮球" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
@@ -9825,6 +9826,7 @@
     <Test StationUnique="1199" StationId="421" RegisterNo="0" TestId="13109" 备注="站点掉线告警" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1200" StationId="426" RegisterNo="169" TestId="11753" 备注="站点断电告警" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1200" StationId="426" RegisterNo="165" TestId="11758" 备注="电量" Multiple="0.001" FunctionCode="3" ReceiveTimeout="3000" DataType="2" Address="1" Min="0.01" Max="100000" AddNumber="0" />
+    <Test StationUnique="1200" StationId="426" RegisterNo="164" TestId="11759" 备注="流量计" Multiple="0.001" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="100000" AddNumber="0" />
     <Test StationUnique="1200" StationId="426" RegisterNo="640" TestId="11763" 备注="考勤" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="2" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1200" StationId="426" RegisterNo="60" TestId="11764" 备注="进水池浮球" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />
     <Test StationUnique="1200" StationId="426" RegisterNo="61" TestId="11765" 备注="出水池浮球" Multiple="1" FunctionCode="3" ReceiveTimeout="3000" DataType="1" Address="1" Min="0" Max="4294967296" AddNumber="0" />

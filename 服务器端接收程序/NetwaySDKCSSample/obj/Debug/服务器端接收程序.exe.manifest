@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>plUMXRIP/PjDXRMCfOwjgK/bRbc=</dsig:DigestValue>
+        <dsig:DigestValue>OGtZUaegPtqYy06mI5bOkWsnszA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xi/oFjDQq7a0QYx0uGpOU/J79qc=</dsig:DigestValue>
+        <dsig:DigestValue>jXbwf2auN5DqNB/AYJxXj8VJ998=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,13 +122,13 @@
       <dsig:DigestValue>++oT3RyAlq4Bpp2XdkClVvYKLuA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Config\SysConfig.xml" size="2130931" writeableType="applicationData">
+  <file name="Config\SysConfig.xml" size="2255491" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>yKRHEXrrgKCmbvZkh/o67kebw6A=</dsig:DigestValue>
+      <dsig:DigestValue>3blhCT17D7xqFRiymuaut9Xs/JU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MyForm\GPRSControl\说明.txt" size="127">
@@ -146,7 +146,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Uhjjd4lTMnjy7187In1OrCjisI4=</dsig:DigestValue>
+      <dsig:DigestValue>/vCY/iO5Og1IJKl33W/6TAyzKcQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="项目说明.txt" size="21">
