@@ -44,7 +44,7 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                             GD_station.stationId = item.id;
                             try
                             {
-                                guangdai_station_link link = links.Single(c => c.station_id == item.id && c.db_name == _org.dbname);
+                                guangdai_station_link link = links.Single(c => c.station_id == item.id && c.db_name == _org.dbname && c.type == 1);
                                 GD_station.wscId = link.wsid;
                                 GD_station.Unique = link.id;
                             }
@@ -88,8 +88,8 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                                     LogMg.AddError(ex);
                                 }
                             }
-                        //if (GD_station.stationId == 629)
-                                gd_stations.Add(GD_station);
+                            //if (GD_station.stationId == 629)
+                            gd_stations.Add(GD_station);
                         }
                     }
                     catch (Exception ex)
