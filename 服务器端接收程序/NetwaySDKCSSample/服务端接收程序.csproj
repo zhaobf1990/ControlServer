@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB213A08-721F-47A6-AD4B-FD5C17C4BA1D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>服务器端接收程序</RootNamespace>
+    <AssemblyName>服务器端接收程序</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\FENG\Downloads\NetWay\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9A100BE00E8DC53010740796BA11AB226DAE3B9C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>NetwaySDKCSSample_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CSDataStandard">
+      <HintPath>..\..\..\CSDataStandard\bin\Debug\CSDataStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\Lassalle.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NetwaySDKCS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\NetwaySDKCS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clazz\ClientInfo.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_CountryNode.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_CountryTest.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_DeviceControl.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_MCGSTest.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_MobileDetection.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_PMQCTest.cs" />
+    <Compile Include="Clazz\Config\ClientConfig\XML_Station.cs" />
+    <Compile Include="Clazz\Config\GuangDai\GD_Config.cs" />
+    <Compile Include="Clazz\Config\GuangDai\GD_Station.cs" />
+    <Compile Include="Clazz\DTUClientInfo.cs" />
+    <Compile Include="Clazz\Config\XML_DBCJTest.cs" />
+    <Compile Include="Clazz\Config\XML_Org.cs" />
+    <Compile Include="Clazz\Config\XML_Station.cs" />
+    <Compile Include="Clazz\Config\XML_Test.cs" />
+    <Compile Include="Clazz\Transfer\RealRec.cs" />
+    <Compile Include="Config\ClientConfig1.cs" />
+    <Compile Include="Config\DBCJConfig.cs" />
+    <Compile Include="Config\SysConfig.cs" />
+    <Compile Include="Config\OrgConfig.cs" />
+    <Compile Include="Config\DTU_StationConfig.cs" />
+    <Compile Include="Launch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Launch.Designer.cs">
+      <DependentUpon>Launch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\CountryTestConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\CountryTestConfig.Designer.cs">
+      <DependentUpon>CountryTestConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\CountryTestModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\CountryTestModify.Designer.cs">
+      <DependentUpon>CountryTestModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\DeviceControlConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\DeviceControlConfig.Designer.cs">
+      <DependentUpon>DeviceControlConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\DeviceControlModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\DeviceControlModify.Designer.cs">
+      <DependentUpon>DeviceControlModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\FormConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\FormConfig.Designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\MainConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\MainConfig.Designer.cs">
+      <DependentUpon>MainConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\StationConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\StationConfig.Designer.cs">
+      <DependentUpon>StationConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Config\StationModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\Config\StationModify.Designer.cs">
+      <DependentUpon>StationModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\ConnectInfo\ConnectInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\ConnectInfo\ConnectInfo.designer.cs">
+      <DependentUpon>ConnectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\Country\FormCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\Country\FormCountry.Designer.cs">
+      <DependentUpon>FormCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\DTU\DTUDataInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\DTU\DTUDataInfo.designer.cs">
+      <DependentUpon>DTUDataInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\DeviceControl\FormDeviceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\DeviceControl\FormDeviceControl.Designer.cs">
+      <DependentUpon>FormDeviceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\GuangDai\GuangDaiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\GuangDai\GuangDaiControl.Designer.cs">
+      <DependentUpon>GuangDaiControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GuangDaiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CommonUtil.cs" />
+    <Compile Include="Util\DateUtil.cs" />
+    <Compile Include="Util\DTU_NetServer.cs" />
+    <Compile Include="Util\GPRS_Protocol.cs" />
+    <Compile Include="Util\GuangDaiCommunicationModbus.cs" />
+    <Compile Include="Util\HeartbeatThread.cs" />
+    <Compile Include="Util\ModbusReturn.cs" />
+    <Compile Include="Util\MyLock.cs" />
+    <Compile Include="Util\AutoCollectionThread.cs" />
+    <Compile Include="Util\TaskPool.cs" />
+    <Compile Include="Util\ControlCommandThread.cs" />
+    <Compile Include="MyForm\MobileDetection\FormMobileDetection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\MobileDetection\FormMobileDetection.Designer.cs">
+      <DependentUpon>FormMobileDetection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\PMQC\FormPMQC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForm\PMQC\FormPMQC.Designer.cs">
+      <DependentUpon>FormPMQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SWS.cs">
+      <DependentUpon>SWS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SWS.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SWS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SWS_DB\SWS_DB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SWS_DB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CheckConnect.cs" />
+    <Compile Include="Util\DTU.cs" />
+    <Compile Include="Util\DTU_ClientManager.cs" />
+    <Compile Include="Util\HD_DTU.cs" />
+    <Compile Include="Util\DownLoadConfig.cs" />
+    <Compile Include="Util\ImageUtil.cs" />
+    <Compile Include="Util\JBT_DTU.cs" />
+    <Compile Include="Util\UdpServer.cs" />
+    <Compile Include="Util\V88CommunicationThread.cs" />
+    <Compile Include="Util\ZG_DTU.cs" />
+    <Compile Include="Util\GlobalPara.cs" />
+    <Compile Include="Util\MessageQueue.cs" />
+    <Compile Include="Util\Modbus.cs" />
+    <Compile Include="Util\ReceiveIp.cs" />
+    <Compile Include="Util\ServerSocketHelper.cs" />
+    <Compile Include="Config\UserProfile.cs" />
+    <Compile Include="Util\_485_JBT_Camera.cs" />
+    <EmbeddedResource Include="Launch.resx">
+      <DependentUpon>Launch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\CountryTestConfig.resx">
+      <DependentUpon>CountryTestConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\CountryTestModify.resx">
+      <DependentUpon>CountryTestModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\DeviceControlConfig.resx">
+      <DependentUpon>DeviceControlConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\DeviceControlModify.resx">
+      <DependentUpon>DeviceControlModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\MainConfig.resx">
+      <DependentUpon>MainConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\StationConfig.resx">
+      <DependentUpon>StationConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Config\StationModify.resx">
+      <DependentUpon>StationModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\ConnectInfo\ConnectInfo.resx">
+      <DependentUpon>ConnectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\Country\FormCountry.resx">
+      <DependentUpon>FormCountry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\DTU\DTUDataInfo.resx">
+      <DependentUpon>DTUDataInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\DeviceControl\FormDeviceControl.resx">
+      <DependentUpon>FormDeviceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\GuangDai\GuangDaiControl.resx">
+      <DependentUpon>GuangDaiControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\MobileDetection\FormMobileDetection.resx">
+      <DependentUpon>FormMobileDetection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\PMQC\FormPMQC.resx">
+      <DependentUpon>FormPMQC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UML图\SequenceDiagram1.sequencediagram.layout">
+      <DependentUpon>SequenceDiagram1.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UML图\新版DTU服务框架图.sequencediagram.layout">
+      <DependentUpon>新版DTU服务框架图.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UML图\旧版DTU服务框架图.sequencediagram.layout">
+      <DependentUpon>旧版DTU服务框架图.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Service References\GuangDaiService\corePlatformWebServiceImpl.wsdl" />
+    <None Include="Service References\GuangDaiService\服务器端接收程序.GuangDaiService.config.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuangDaiService\服务器端接收程序.GuangDaiService.transmitTransparentlyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuangDaiService\服务器端接收程序.GuangDaiService.versionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="SWS_DB\SWS_DB.dbml.layout">
+      <DependentUpon>SWS_DB.dbml</DependentUpon>
+    </None>
+    <None Include="SWS.dbml.layout">
+      <DependentUpon>SWS.dbml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SWS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SWS.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SWS_DB\SWS_DB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SWS_DB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UML图\SequenceDiagram1.sequencediagram" />
+    <None Include="UML图\新版DTU服务框架图.sequencediagram" />
+    <None Include="UML图\旧版DTU服务框架图.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\ClientConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\SysConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MyForm\GPRSControl\说明.txt" />
+    <None Include="Service References\GuangDaiService\configuration91.svcinfo" />
+    <None Include="Service References\GuangDaiService\configuration.svcinfo" />
+    <None Include="Service References\GuangDaiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="项目说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBUtility\Utility.csproj">
+      <Project>{E6617F0D-9111-4839-81D2-D75610C2513A}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GuangDaiService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

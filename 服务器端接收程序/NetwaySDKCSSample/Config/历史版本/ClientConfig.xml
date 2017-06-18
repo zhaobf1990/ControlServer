@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClientConfig>
+  <Stations>
+    <Station UniqueId="1" TransferCode="1001" StationId="56" OrgId="010043" 站点名称="狮山村" />
+    <Station UniqueId="2" TransferCode="2001" StationId="67" OrgId="010043" 站点名称="测试站点" />
+    <Station UniqueId="3" TransferCode="1002" StationId="32" OrgId="010043" 站点名称="汪山村" />
+    <Station UniqueId="6" TransferCode="1003" StationId="98" OrgId="010043" 站点名称="东吴镇童一村1" />
+    <Station UniqueId="8" TransferCode="1004" StationId="128" OrgId="010043" 站点名称="黄湖镇" />
+    <Station UniqueId="9" TransferCode="1005" StationId="51" OrgId="010043" 站点名称="莲花镇徐家村" />
+    <Station UniqueId="10" TransferCode="1006" StationId="130" OrgId="010043" 站点名称="莲花镇江珠村" />
+    <Station UniqueId="11" TransferCode="1007" StationId="131" OrgId="010043" 站点名称="莲花镇樟村" />
+    <Station UniqueId="12" TransferCode="1010" StationId="132" OrgId="010048" 站点名称="柳岩村里" />
+    <Station UniqueId="13" TransferCode="1011" StationId="133" OrgId="010048" 站点名称="柳岩南母山" />
+    <Station UniqueId="14" TransferCode="1012" StationId="134" OrgId="010048" 站点名称="柳岩盛家塘" />
+    <Station UniqueId="15" TransferCode="1013" StationId="145" OrgId="010048" 站点名称="教学参观站点" />
+	<Station UniqueId="16" TransferCode="1014" StationId="159" OrgId="010054" 站点名称="诸暨东溪村1" />
+	<Station UniqueId="17" TransferCode="1015" StationId="269" OrgId="010052" 站点名称="嘉兴监控室" />
+	<Station UniqueId="18" TransferCode="1016" StationId="170" OrgId="010050" 站点名称="南浔镇祜村" />
+	<Station UniqueId="19" TransferCode="1017" StationId="162" OrgId="010043" 站点名称="衢州开化马金镇" />
+	<Station UniqueId="20" TransferCode="1018" StationId="151" OrgId="010053" 站点名称="苕溪大船埠头" />
+	<Station UniqueId="21" TransferCode="1019" StationId="173" OrgId="010050" 站点名称="和孚镇水婆村" />
+	<Station UniqueId="22" TransferCode="1020" StationId="174" OrgId="010050" 站点名称="和孚镇三家村" />
+	<Station UniqueId="23" TransferCode="1021" StationId="382" OrgId="010051" 站点名称="德清监控室" />
+    <Station UniqueId="24" TransferCode="1022" StationId="183" OrgId="010056" 站点名称="广安区岳庙新村" />
+  </Stations>
+  <CountryTest>
+    <Nodes>
+      <Node NodeId="q00" 备注="污水提升泵" />
+      <Node NodeId="q01" 备注="搅拌机1" />
+      <Node NodeId="q02" 备注="搅拌机2" />
+      <Node NodeId="q03" 备注="曝气泵" />
+      <Node NodeId="q04" 备注="回流泵" />
+      <Node NodeId="q05" 备注="污泥泵" />
+      <Node NodeId="q06" 备注="出水提升泵" />
+      <Node NodeId="q08" 备注="二氧化氯发生器" />
+      <Node NodeId="q09" 备注="塑料磁力泵" />
+      <Node NodeId="vd50" 备注="流量计" />
+      <Node NodeId="总电量" 备注="总电量" />
+	  <Node NodeId="市电电压" 备注="市电电压" />
+      <Node NodeId="太阳能用电量" 备注="太阳能用电量" />
+      <Node NodeId="太阳能电压" 备注="太阳能电压" />
+      <Node NodeId="Data1" 备注="温度" />
+      <Node NodeId="Data2" 备注="湿度" />
+	  <Node NodeId="COD" 备注="出水COD" />
+	  <Node NodeId="NH3_N" 备注="出水NH3_N" />
+	  <Node NodeId="TP" 备注="出水TP" />
+    </Nodes>
+    <Test UniqueId="1" StationUniqueId="1" NodeId="q00" TestId="1077" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="2" StationUniqueId="1" NodeId="q03" TestId="1078" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="3" StationUniqueId="1" NodeId="q05" TestId="1079" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="4" StationUniqueId="1" NodeId="q06" TestId="1084" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="5" StationUniqueId="1" NodeId="vd50" TestId="1083" 备注="流量计" Multiple="1" />
+    <Test UniqueId="6" StationUniqueId="1" NodeId="总电量" TestId="1092" 备注="用电量" Multiple="1" />
+    <Test UniqueId="7" StationUniqueId="1" NodeId="Data1" TestId="1075" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="8" StationUniqueId="1" NodeId="Data2" TestId="1076" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="9" StationUniqueId="3" NodeId="q00" TestId="1475" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="10" StationUniqueId="3" NodeId="q03" TestId="1474" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="11" StationUniqueId="3" NodeId="q05" TestId="1473" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="12" StationUniqueId="3" NodeId="q06" TestId="1471" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="13" StationUniqueId="3" NodeId="vd50" TestId="1472" 备注="流量计" Multiple="1" />
+    <Test UniqueId="14" StationUniqueId="3" NodeId="总电量" TestId="1110" 备注="用电量" Multiple="1" />
+    <Test UniqueId="15" StationUniqueId="3" NodeId="Data1" TestId="1476" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="16" StationUniqueId="3" NodeId="Data2" TestId="1477" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="17" StationUniqueId="6" NodeId="q00" TestId="1772" 备注="潜水泵1" Multiple="1" />
+    <Test UniqueId="18" StationUniqueId="6" NodeId="q06" TestId="1773" 备注="潜水泵2" Multiple="1" />
+    <Test UniqueId="19" StationUniqueId="6" NodeId="vd50" TestId="1775" 备注="流量计" Multiple="1" />
+    <Test UniqueId="20" StationUniqueId="6" NodeId="总电量" TestId="1774" 备注="用电量" Multiple="1" />
+    <Test UniqueId="21" StationUniqueId="6" NodeId="Data1" TestId="2100" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="27" StationUniqueId="8" NodeId="q03" TestId="2139" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="28" StationUniqueId="8" NodeId="q05" TestId="2140" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="29" StationUniqueId="8" NodeId="q06" TestId="2141" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="30" StationUniqueId="8" NodeId="vd50" TestId="2137" 备注="流量计" Multiple="1" />
+    <Test UniqueId="31" StationUniqueId="8" NodeId="总电量" TestId="2138" 备注="用电量" Multiple="1" />
+    <Test UniqueId="32" StationUniqueId="8" NodeId="Data1" TestId="2130" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="33" StationUniqueId="8" NodeId="Data2" TestId="2142" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="34" StationUniqueId="10" NodeId="q00" TestId="2166" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="35" StationUniqueId="10" NodeId="q01" TestId="2167" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="36" StationUniqueId="10" NodeId="q03" TestId="2168" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="37" StationUniqueId="10" NodeId="q05" TestId="2169" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="38" StationUniqueId="10" NodeId="q06" TestId="2170" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="39" StationUniqueId="10" NodeId="q08" TestId="2171" 备注="二氧化氯发生器" Multiple="1" />
+    <Test UniqueId="40" StationUniqueId="10" NodeId="q09" TestId="2172" 备注="塑料磁力泵" Multiple="1" />
+    <Test UniqueId="41" StationUniqueId="10" NodeId="vd50" TestId="2144" 备注="流量计" Multiple="1" />
+    <Test UniqueId="42" StationUniqueId="10" NodeId="总电量" TestId="2143" 备注="用电量" Multiple="1" />
+    <Test UniqueId="43" StationUniqueId="10" NodeId="Data1" TestId="2145" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="44" StationUniqueId="10" NodeId="Data2" TestId="2146" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="45" StationUniqueId="9" NodeId="q00" TestId="1391" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="46" StationUniqueId="9" NodeId="q01" TestId="1390" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="47" StationUniqueId="9" NodeId="q03" TestId="2253" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="48" StationUniqueId="9" NodeId="q05" TestId="2254" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="49" StationUniqueId="9" NodeId="q06" TestId="2255" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="50" StationUniqueId="9" NodeId="q08" TestId="2256" 备注="二氧化氯发生器" Multiple="1" />
+    <Test UniqueId="51" StationUniqueId="9" NodeId="q09" TestId="2257" 备注="塑料磁力泵" Multiple="1" />
+    <Test UniqueId="52" StationUniqueId="9" NodeId="vd50" TestId="2263" 备注="流量计" Multiple="1" />
+    <Test UniqueId="53" StationUniqueId="9" NodeId="总电量" TestId="2262" 备注="用电量" Multiple="1" />
+    <Test UniqueId="54" StationUniqueId="9" NodeId="Data1" TestId="2264" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="55" StationUniqueId="9" NodeId="Data2" TestId="2265" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="56" StationUniqueId="11" NodeId="q00" TestId="2174" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="57" StationUniqueId="11" NodeId="q01" TestId="2175" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="58" StationUniqueId="11" NodeId="q03" TestId="2176" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="59" StationUniqueId="11" NodeId="q05" TestId="2177" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="60" StationUniqueId="11" NodeId="q06" TestId="2178" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="61" StationUniqueId="11" NodeId="q08" TestId="2179" 备注="二氧化氯发生器" Multiple="1" />
+    <Test UniqueId="62" StationUniqueId="11" NodeId="q09" TestId="2180" 备注="塑料磁力泵" Multiple="1" />
+    <Test UniqueId="63" StationUniqueId="11" NodeId="vd50" TestId="2244" 备注="流量计" Multiple="1" />
+    <Test UniqueId="64" StationUniqueId="11" NodeId="总电量" TestId="2243" 备注="用电量" Multiple="1" />
+    <Test UniqueId="65" StationUniqueId="11" NodeId="Data1" TestId="2245" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="66" StationUniqueId="11" NodeId="Data2" TestId="2246" 备注="湿度" Multiple="0.01" />
+    <Test UniqueId="67" StationUniqueId="12" NodeId="q03" TestId="2288" 备注="曝气泵" Multiple="1"/>
+    <Test UniqueId="68" StationUniqueId="12" NodeId="q05" TestId="2289" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="69" StationUniqueId="13" NodeId="q03" TestId="2296" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="70" StationUniqueId="13" NodeId="q05" TestId="2297" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="71" StationUniqueId="14" NodeId="q03" TestId="2304" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="72" StationUniqueId="14" NodeId="q05" TestId="2305" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="73" StationUniqueId="2" NodeId="q00" TestId="1461" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="74" StationUniqueId="15" NodeId="q00" TestId="3224" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="75" StationUniqueId="15" NodeId="q01" TestId="3225" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="76" StationUniqueId="15" NodeId="q02" TestId="3226" 备注="搅拌机2" Multiple="1" />
+    <Test UniqueId="77" StationUniqueId="15" NodeId="q03" TestId="3144" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="78" StationUniqueId="15" NodeId="q04" TestId="3227" 备注="回流泵" Multiple="1" />
+    <Test UniqueId="79" StationUniqueId="15" NodeId="q05" TestId="3145" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="80" StationUniqueId="15" NodeId="q06" TestId="3228" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="81" StationUniqueId="15" NodeId="vd50" TestId="3231" 备注="流量计" Multiple="1" />
+    <Test UniqueId="82" StationUniqueId="15" NodeId="总电量" TestId="3232" 备注="用电量" Multiple="1" />
+    <Test UniqueId="83" StationUniqueId="15" NodeId="Data1" TestId="3229" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="84" StationUniqueId="15" NodeId="Data2" TestId="3230" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="86" StationUniqueId="16" NodeId="q00" TestId="3341" 备注="污水提升泵" Multiple="1" />
+	<Test UniqueId="87" StationUniqueId="16" NodeId="q03" TestId="3339" 备注="曝气泵" Multiple="1" />
+	<Test UniqueId="88" StationUniqueId="16" NodeId="q05" TestId="3340" 备注="污泥泵" Multiple="1" />
+	<Test UniqueId="89" StationUniqueId="16" NodeId="vd50" TestId="3343" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="90" StationUniqueId="16" NodeId="总电量" TestId="3342" 备注="用电量" Multiple="0.01" />
+    <Test UniqueId="91" StationUniqueId="16" NodeId="Data1" TestId="3344" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="92" StationUniqueId="16" NodeId="Data2" TestId="3345" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="93" StationUniqueId="17" NodeId="q00" TestId="4569" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="94" StationUniqueId="17" NodeId="q01" TestId="4570" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="95" StationUniqueId="17" NodeId="q02" TestId="4582" 备注="搅拌机2" Multiple="1" />
+    <Test UniqueId="96" StationUniqueId="17" NodeId="q03" TestId="4571" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="97" StationUniqueId="17" NodeId="q04" TestId="4583" 备注="回流泵" Multiple="1" />
+    <Test UniqueId="98" StationUniqueId="17" NodeId="q05" TestId="4572" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="99" StationUniqueId="17" NodeId="q06" TestId="4584" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="100" StationUniqueId="17" NodeId="vd50" TestId="4574" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="101" StationUniqueId="17" NodeId="总电量" TestId="4575" 备注="用电量" Multiple="0.01" />
+	<Test UniqueId="101" StationUniqueId="17" NodeId="市电电压" TestId="4585" 备注="市电电压" Multiple="0.1" />
+    <Test UniqueId="102" StationUniqueId="17" NodeId="Data1" TestId="4567" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="103" StationUniqueId="17" NodeId="Data2" TestId="4573" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="104" StationUniqueId="18" NodeId="q00" TestId="3613" 备注="污水提升泵" Multiple="1" />   
+    <Test UniqueId="105" StationUniqueId="18" NodeId="q03" TestId="3614" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="106" StationUniqueId="18" NodeId="q05" TestId="3624" 备注="污泥泵" Multiple="1" /> 
+    <Test UniqueId="108" StationUniqueId="18" NodeId="vd50" TestId="3616" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="109" StationUniqueId="18" NodeId="总电量" TestId="3617" 备注="用电量" Multiple="0.01" />
+    <Test UniqueId="110" StationUniqueId="18" NodeId="Data1" TestId="3612" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="111" StationUniqueId="18" NodeId="Data2" TestId="3615" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="104" StationUniqueId="19" NodeId="q00" TestId="3399" 备注="污水提升泵" Multiple="1" />   
+    <Test UniqueId="105" StationUniqueId="19" NodeId="q03" TestId="3400" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="106" StationUniqueId="19" NodeId="q04" TestId="3410" 备注="回流泵" Multiple="1" />
+    <Test UniqueId="107" StationUniqueId="19" NodeId="q06" TestId="3411" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="108" StationUniqueId="19" NodeId="vd50" TestId="3402" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="109" StationUniqueId="19" NodeId="总电量" TestId="3403" 备注="用电量" Multiple="0.01" />
+    <Test UniqueId="110" StationUniqueId="19" NodeId="Data1" TestId="3398" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="111" StationUniqueId="19" NodeId="Data2" TestId="3401" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="112" StationUniqueId="20" NodeId="q03" TestId="3380" 备注="曝气泵" Multiple="1" />
+	<Test UniqueId="113" StationUniqueId="20" NodeId="vd50" TestId="3386" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="114" StationUniqueId="20" NodeId="总电量" TestId="3385" 备注="用电量" Multiple="0.01" />
+    <Test UniqueId="115" StationUniqueId="20" NodeId="Data1" TestId="3486" 备注="温度" Multiple="0.01" />
+    <Test UniqueId="116" StationUniqueId="20" NodeId="Data2" TestId="3487" 备注="湿度" Multiple="0.01" />
+	<Test UniqueId="117" StationUniqueId="21" NodeId="q00" TestId="3652" 备注="污水提升泵" Multiple="1" />
+	<Test UniqueId="118" StationUniqueId="21" NodeId="q03" TestId="3651" 备注="曝气泵" Multiple="1" />
+	<Test UniqueId="119" StationUniqueId="21" NodeId="q05" TestId="3653" 备注="污泥泵" Multiple="1" />
+	<Test UniqueId="120" StationUniqueId="21" NodeId="q06" TestId="3654" 备注="出水提升泵" Multiple="1" />	
+	<Test UniqueId="121" StationUniqueId="21" NodeId="vd50" TestId="3657" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="122" StationUniqueId="21" NodeId="总电量" TestId="3656" 备注="用电量" Multiple="0.01" />
+    <Test UniqueId="123" StationUniqueId="22" NodeId="q00" TestId="3668" 备注="污水提升泵" Multiple="1" />
+	<Test UniqueId="124" StationUniqueId="22" NodeId="q03" TestId="3667" 备注="曝气泵" Multiple="1" />
+	<Test UniqueId="125" StationUniqueId="22" NodeId="q05" TestId="3669" 备注="污泥泵" Multiple="1" />
+	<Test UniqueId="126" StationUniqueId="22" NodeId="q06" TestId="3670" 备注="出水提升泵" Multiple="1" />	
+	<Test UniqueId="127" StationUniqueId="22" NodeId="vd50" TestId="3673" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="128" StationUniqueId="22" NodeId="总电量" TestId="3672" 备注="用电量" Multiple="0.01" />
+	<Test UniqueId="129" StationUniqueId="23" NodeId="q00" TestId="4600" 备注="污水提升泵" Multiple="1" />
+    <Test UniqueId="130" StationUniqueId="23" NodeId="q01" TestId="4601" 备注="搅拌机1" Multiple="1" />
+    <Test UniqueId="131" StationUniqueId="23" NodeId="q02" TestId="4614" 备注="搅拌机2" Multiple="1" />
+    <Test UniqueId="132" StationUniqueId="23" NodeId="q03" TestId="4602" 备注="曝气泵" Multiple="1" />
+    <Test UniqueId="133" StationUniqueId="23" NodeId="q04" TestId="4615" 备注="回流泵" Multiple="1" />
+    <Test UniqueId="134" StationUniqueId="23" NodeId="q05" TestId="4603" 备注="污泥泵" Multiple="1" />
+    <Test UniqueId="135" StationUniqueId="23" NodeId="q06" TestId="4616" 备注="出水提升泵" Multiple="1" />
+    <Test UniqueId="136" StationUniqueId="23" NodeId="vd50" TestId="4605" 备注="流量计" Multiple="0.001" />
+    <Test UniqueId="137" StationUniqueId="23" NodeId="总电量" TestId="4606" 备注="用电量" Multiple="100" />
+    <Test UniqueId="138" StationUniqueId="23" NodeId="Data1" TestId="4598" 备注="温度" Multiple="1" />
+    <Test UniqueId="139" StationUniqueId="23" NodeId="Data2" TestId="4604" 备注="湿度" Multiple="1" />
+	<Test UniqueId="140" StationUniqueId="24" NodeId="COD" TestId="3733" 备注="出水COD" Multiple="0.1" />
+	<Test UniqueId="141" StationUniqueId="24" NodeId="NH3_N" TestId="3734" 备注="出水NH3_N" Multiple="0.001" />
+	<Test UniqueId="142" StationUniqueId="24" NodeId="TP" TestId="3735" 备注="出水TP" Multiple="0.001" />
+
+   
+  </CountryTest>
+  <DeviceControl>
+    <Device UniqueId="1" StationUniqueId="1" Number="000181" DeviceId="1" />
+    <Device UniqueId="2" StationUniqueId="1" Number="000182" DeviceId="2" />
+    <Device UniqueId="3" StationUniqueId="1" Number="000183" DeviceId="3" />
+    <Device UniqueId="4" StationUniqueId="1" Number="000184" DeviceId="4" />
+    <Device UniqueId="5" StationUniqueId="1" Number="000185" DeviceId="5" />
+    <Device UniqueId="6" StationUniqueId="3" Number="000181" DeviceId="2" />
+    <Device UniqueId="7" StationUniqueId="1" Number="000186" DeviceId="6" />
+    <Device UniqueId="8" StationUniqueId="1" Number="000187" DeviceId="7" />
+  </DeviceControl>
+  <PMQC>
+    <Test UniqueId="1" StationUniqueId="1" Id="1" Name="1" X="10" Y="65" TestId="1018" />
+    <Test UniqueId="1" StationUniqueId="1" Id="2" Name="2" X="10" Y="81" TestId="1019" />
+  </PMQC>
+  <MobileDetection>
+    <检测指标列表>
+      <检测指标 Name="cod1" />
+      <检测指标 Name="cod2" />
+      <检测指标 Name="nh3n1" />
+      <检测指标 Name="nh3n2" />
+      <检测指标 Name="tp2" />
+    </检测指标列表>
+    <Test UniqueId="1" StationUniqueId="1" TestId="1004" 检测指标="cod1" />
+    <Test UniqueId="2" StationUniqueId="1" TestId="1014" 检测指标="cod2" />
+    <Test UniqueId="3" StationUniqueId="1" TestId="1005" 检测指标="nh3n1" />
+    <Test UniqueId="4" StationUniqueId="1" TestId="1015" 检测指标="nh3n2" />
+    <Test UniqueId="5" StationUniqueId="1" TestId="1016" 检测指标="tp2" />
+  </MobileDetection>
+  <MCGS>
+ <!-- <Test UniqueId="1" StationUniqueId="15" TestId="3218" ColumnName="cod1" TestName="进水COD" />
+    <Test UniqueId="2" StationUniqueId="15" TestId="3219" ColumnName="cod2" TestName="出水COD" />
+    <Test UniqueId="3" StationUniqueId="15" TestId="3220" ColumnName="nh3n1" TestName="进水NH3-N" />
+    <Test UniqueId="4" StationUniqueId="15" TestId="3221" ColumnName="nh3n2" TestName="出水NH3-N" />
+    <Test UniqueId="5" StationUniqueId="15" TestId="3222" ColumnName="tp1" TestName="进水TP" />
+    <Test UniqueId="6" StationUniqueId="15" TestId="3223" ColumnName="tp2" TestName="出水TP" />
+	<Test UniqueId="7" StationUniqueId="13" TestId="2290" ColumnName="cod1" TestName="进水COD" />
+    <Test UniqueId="8" StationUniqueId="13" TestId="2293" ColumnName="cod2" TestName="出水COD" />
+    <Test UniqueId="9" StationUniqueId="13" TestId="2291" ColumnName="nh3n1" TestName="进水NH3-N" />
+    <Test UniqueId="10" StationUniqueId="13" TestId="2294" ColumnName="nh3n2" TestName="出水NH3-N" />
+    <Test UniqueId="11" StationUniqueId="13" TestId="2292" ColumnName="tp1" TestName="进水TP" />
+    <Test UniqueId="12" StationUniqueId="13" TestId="2295" ColumnName="tp2" TestName="出水TP" />-->
+	<Test UniqueId="13" StationUniqueId="13" TestId="2311" ColumnName="vd50" TestName="流量计" />
+	<!--<Test UniqueId="14" StationUniqueId="20" TestId="3377" ColumnName="cod2" TestName="出水COD" />
+	<Test UniqueId="15" StationUniqueId="20" TestId="3378" ColumnName="nh3n2" TestName="出水NH3-N" /> 
+    <Test UniqueId="16" StationUniqueId="20" TestId="3379" ColumnName="tp2" TestName="出水TP" />-->
+	 
+	
+  
+  </MCGS>
+</ClientConfig>

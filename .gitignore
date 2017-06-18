@@ -1,0 +1,6 @@
+**/out/
+**/target/
+*.class
+**/Log/
+**/log/
+**/sunda_log/
