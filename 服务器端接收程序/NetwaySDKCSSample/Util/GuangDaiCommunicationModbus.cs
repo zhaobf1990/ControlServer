@@ -5,28 +5,31 @@ using System.Text;
 using Utility;
 using System.Net.Sockets;
 using 服务器端接收程序.MyForm.GPRSControl;
+using log4net;
 
 namespace 服务器端接收程序.Util
 {
     class GuangDaiCommunicationModbus : modbus
     {
+      
         public static ModbusReturn readdata(GuangDaiService.CorePlatformWebServiceClient ws, String wscId, byte address, ushort RegisterStartAdd, int ModbusfunctionCode, string dataType, string DecodeOrder, ModbusReturn modbusReturn)
         {
             modbusReturn.sendTime = DateTime.Now;
             SendFc03(ws, wscId, address, RegisterStartAdd, ModbusfunctionCode, dataType, DecodeOrder, modbusReturn);
             modbusReturn.RecTime = DateTime.Now;
+           
             return modbusReturn;
         }
 
         public static ModbusReturn writedata(GuangDaiService.CorePlatformWebServiceClient ws, String wscId, byte address, ushort RegisterStartAdd, int ModbusfunctionCode, string dataType, string DecodeOrder, short value, ModbusReturn modbusReturn)
         {
             short[] values = new short[2];
-             
+
             values[0] = value;
             modbusReturn.sendTime = DateTime.Now;
-             SendFc16(ws, wscId, address, RegisterStartAdd, 1, dataType, values, modbusReturn);
-             modbusReturn.RecTime = DateTime.Now;
-             return modbusReturn;
+            SendFc16(ws, wscId, address, RegisterStartAdd, 1, dataType, values, modbusReturn);
+            modbusReturn.RecTime = DateTime.Now;
+            return modbusReturn;
         }
 
         /// <summary>
@@ -64,7 +67,8 @@ namespace 服务器端接收程序.Util
             {
                 //   GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently("160512027", 1, "01030098000105E5"); 
                 modbusReturn.sendMsg = message;
-                GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently(wscId, (int)address, CommonUtil.byteToHexStr(message, ""));
+                String hexCommand = CommonUtil.byteToHexStr(message, "");
+                GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently(wscId, (int)address, hexCommand);
                 modbusReturn.RecMsg = response;
                 if (result.result == true)
                 {
@@ -88,6 +92,7 @@ namespace 服务器端接收程序.Util
             {
                 modbusReturn.ErrorMsg = ex.Message;
                 modbusReturn.success = false;
+
                 return;
             }
             catch (Exception ex)
@@ -96,7 +101,7 @@ namespace 服务器端接收程序.Util
                 modbusReturn.ErrorMsg = "Error in read event: " + ex.Message;
                 modbusReturn.success = false;
                 return;
-            }
+            } 
             //处理返回结果
             if (CheckResponse(response))
             {

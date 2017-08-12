@@ -10,6 +10,7 @@ using 服务器端接收程序.Clazz;
 using 服务器端接收程序.Config;
 using 服务器端接收程序.Util;
 using 服务器端接收程序.Clazz.Config.GuangDai;
+using log4net;
 
 namespace 服务器端接收程序.MyForm.GPRSControl
 {
@@ -18,6 +19,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
     /// </summary>
     public class AutoCollectionThread
     {
+        private static ILog log = LogManager.GetLogger(typeof(GuangDaiCommunicationModbus));
         /// <summary>
         /// 线程池
         /// </summary>
@@ -76,9 +78,12 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                 {
                     try
                     {
-                       // if (!HasExistClientInPool(gd_stations[i].Unique))
-                            if (!HasExistClientInPool(gd_stations[i]))
+                        //if (gd_stations[i].stationId == 2371)
+                        //{
+                        // if (!HasExistClientInPool(gd_stations[i].Unique))
+                        if (!HasExistClientInPool(gd_stations[i]))
                             PoolB.AddTaskItem(new WaitCallback(ExecuteGDOrder), gd_stations[i]);
+                        //}
                     }
                     catch (Exception ex)
                     {
@@ -121,7 +126,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                                 {
                                     modbusReturn.clear();
                                     LogMg.AddDebug(string.Format("开始接收  时间:{0},站点:{1} tel:{2},testid:{3}", DateTime.Now.ToString(), client.Name, client.TelOrGprsId.ToString(), test.TestId));
-                                  modbus.readdata(client.Protocol, client.socket, client.TelOrGprsId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, test.ReceiveTimeout, modbusReturn);
+                                    modbus.readdata(client.Protocol, client.socket, client.TelOrGprsId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, test.ReceiveTimeout, modbusReturn);
                                     count++;
                                 }
 
@@ -181,8 +186,9 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                         {
                             modbusReturn.clear();
                             //LogManager.AddDebug(string.Format("开始接收  时间:{0},站点:{1}  testid:{2}", DateTime.Now.ToString(), gd_station.name, test.TestId));
-                           GuangDaiCommunicationModbus.readdata(ws, gd_station.wscId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, modbusReturn);
+                            GuangDaiCommunicationModbus.readdata(ws, gd_station.wscId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, modbusReturn);
                             // result = modbus.readdata(gd_station.Protocol, gd_station.socket, gd_station.TelOrGprsId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, test.ReceiveTimeout, ref value);
+                            log.Info("wscId=" + gd_station.wscId + " testid=" + test.TestId + "  address=" + test.Address + "  " + modbusReturn.ToString());
                             count++;
                         }
 
@@ -198,13 +204,13 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                             }
                             else
                             {
-                                LogMg.AddDebug(string.Format("接收时间:【{0}】,站点：{1}，testid:{2},乘以倍率之后的值：{3}   由于值不在范围内[{4},{5}]，丢弃", DateTime.Now.ToString(), gd_station.name, test.TestId, modbusReturn.value* test.Multiple + test.AddNumber, test.Min, test.Max));
+                                LogMg.AddDebug(string.Format("接收时间:【{0}】,站点：{1}，testid:{2},乘以倍率之后的值：{3}   由于值不在范围内[{4},{5}]，丢弃", DateTime.Now.ToString(), gd_station.name, test.TestId, modbusReturn.value * test.Multiple + test.AddNumber, test.Min, test.Max));
                             }
                         }
                         else
                         {
                             //接收数据失败
-                            LogMg.AddDebug(string.Format( "数据库名：{0}    testid:{1}   接收数据失败",gd_station.dbName,test.TestId));
+                            LogMg.AddDebug(string.Format("数据库名：{0}    testid:{1}   接收数据失败   原因：{2}", gd_station.dbName, test.TestId, modbusReturn.ErrorMsg));
                             //   MessageQueue.Enqueue_DataInfo(string.Format("接收时间:【{0}】,站点：{1}，testid:{2}, 接收数据失败", DateTime.Now.ToString(), station.Name, test.TestId));
                         }
                     }
@@ -281,7 +287,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     realrec realrec = new realrec();
                     realrec.testid = testid;
                     realrec.value = (decimal)value;
-                    realrec.testtime = DateTime.Now; 
+                    realrec.testtime = DateTime.Now;
                     db.realrec.InsertOnSubmit(realrec);
                     db.SubmitChanges();     //提交
                 }
