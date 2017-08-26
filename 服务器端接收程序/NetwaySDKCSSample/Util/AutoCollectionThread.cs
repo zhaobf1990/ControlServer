@@ -11,11 +11,15 @@ using 服务器端接收程序.Config;
 using 服务器端接收程序.Util;
 using 服务器端接收程序.Clazz.Config.GuangDai;
 using log4net;
+using 服务器端接收程序.Clazz.Config;
 
 namespace 服务器端接收程序.MyForm.GPRSControl
 {
     /// <summary>
     /// 定时采集SysConfig.xml中所有的检测点
+    /// 
+    /// 定时采集数据库中站点设备类型为5的广岱透传设备，   类型为6的透传设备不采集，由广岱平台采集。（因为他们平台发送一个指令速度太慢了，平均都在20秒，30秒左右）
+    /// 
     /// </summary>
     public class AutoCollectionThread
     {
@@ -82,7 +86,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                         //{
                         // if (!HasExistClientInPool(gd_stations[i].Unique))
                         if (!HasExistClientInPool(gd_stations[i]))
-                            PoolB.AddTaskItem(new WaitCallback(ExecuteGDOrder), gd_stations[i]);
+                            PoolB.AddTaskItem(new WaitCallback(ExecuteGD透传Order), gd_stations[i]);
                         //}
                     }
                     catch (Exception ex)
@@ -150,6 +154,10 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                                     //接收数据失败
                                     LogMg.AddDebug(string.Format("接收数据失败"));
                                     //   MessageQueue.Enqueue_DataInfo(string.Format("接收时间:【{0}】,站点：{1}，testid:{2}, 接收数据失败", DateTime.Now.ToString(), station.Name, test.TestId));
+                                    if (modbusReturn.ErrorMsg.Contains("设备未在线"))
+                                    {
+                                        return;
+                                    }
                                 }
                             }
                             catch (SocketException)
@@ -170,10 +178,18 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                 }
             }
         }
-        private static void ExecuteGDOrder(object state)
+        private static void ExecuteGD透传Order(object state)
         {
-            GuangDaiService.CorePlatformWebServiceClient ws = new GuangDaiService.CorePlatformWebServiceClient("gdServerCfg1");
             GD_Station gd_station = (GD_Station)state;
+            List<XML_Org> orgs = SysConfig.orgConfig.Orgs.Where(c => c.OrgId == gd_station.OrgId).ToList();
+            if (orgs == null || orgs.Count == 0)
+            {
+                LogMg.AddError("找不到orgId：" + gd_station.OrgId);
+                return;
+            }
+            XML_Org org = orgs[0];
+
+            GuangDaiService.CorePlatformWebServiceClient ws = new GuangDaiService.CorePlatformWebServiceClient(org.gdServerCfg);
             if (gd_station != null && gd_station.tests != null)
             {
                 foreach (Clazz.Config.XML_Test test in gd_station.tests)
@@ -288,6 +304,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     realrec.testid = testid;
                     realrec.value = (decimal)value;
                     realrec.testtime = DateTime.Now;
+                    realrec.remark = "from 201 Server AutoCollectionThread";
                     db.realrec.InsertOnSubmit(realrec);
                     db.SubmitChanges();     //提交
                 }

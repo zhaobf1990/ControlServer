@@ -12,6 +12,7 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
         public String wscId { get; set; }
         public int stationId { get; set; }
         public String dbName { get; set; }
+        public string OrgId { get; set; }
         public List<XML_Test> tests { get; set; }
 
         public override bool Equals(object obj)

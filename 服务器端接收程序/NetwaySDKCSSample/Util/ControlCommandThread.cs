@@ -17,6 +17,9 @@ namespace 服务器端接收程序.MyForm.GPRSControl
 {
     /// <summary>
     /// 执行control_command表的指令
+    /// 广岱有两款设置   （类型4：非透传设备。  类型5：透传设备。 ）  
+    /// 2017-08-25，又增加了一个类型（类型6:透传设备。 实际是跟类型5设备是一样的。只是类型6的设备自动采集由广岱来做。再由广岱将数据传到我们java开发的接口。）
+    /// 
     /// </summary>
     public class ControlCommandThread
     {
@@ -116,7 +119,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
             try
             {
                 //查询出一个小时内有指令的站点的id
-                List<int> stations = db.ExecuteQuery<int>("SELECT station_id FROM dbo.control_command where (state=0 OR state IS NULL) and communication_mode=5   group by station_id ").ToList();
+                List<int> stations = db.ExecuteQuery<int>("SELECT station_id FROM dbo.control_command where (state=0 OR state IS NULL) and communication_mode in (5,6)   group by station_id ").ToList();
                 if (stations.Count == 0) return;
                 //循环站点   将站点添加到线程池
                 foreach (int stationid in stations)
@@ -196,7 +199,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                     LogMg.AddDebug("站点id=" + arg.station_id + "  找不到对应的wscId");
                     return;
                 }
-                //把那些不需要执行了的数据 state=1  就当这行指令已经执行过了
+                //把那些不需要执行了的数据 state设置为1，  就当这行指令已经执行过了
                 List<int> giveUpCommands = db.ExecuteQuery<int>("SELECT id FROM dbo.control_command  WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ").ToList();
                 if (giveUpCommands.Count > 0)
                 {
@@ -336,7 +339,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                 //db.ExecuteCommand("UPDATE dbo.control_command SET state=1 WHERE station_id=" + arg.station_id + " AND (state=0 OR state IS NULL) AND id NOT IN (SELECT MAX(id) FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND   (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ");
 
                 //获取需要执行的指令
-                List<control_command> commands = db.ExecuteQuery<control_command>("SELECT * FROM dbo.control_command WHERE id IN(SELECT MAX(id) as id  FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND communication_mode=5  AND tp is Null AND  (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ORDER BY add_datetime").ToList();
+                List<control_command> commands = db.ExecuteQuery<control_command>("SELECT * FROM dbo.control_command WHERE id IN(SELECT MAX(id) as id  FROM dbo.control_command   WHERE  station_id=" + arg.station_id + " AND communication_mode in (5,6)  AND tp is Null AND  (state=0 OR state IS NULL)  GROUP BY gong_kuang_id,read_or_write) ORDER BY add_datetime").ToList();
 
                 TakePhotoTp5(db, ws, arg.station_id, wscid);
                 for (int i = 0; i < commands.Count; i++)

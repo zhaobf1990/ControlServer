@@ -701,7 +701,7 @@
             this.groupBox4.Size = new System.Drawing.Size(156, 420);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "定时发指令线程池";
+            this.groupBox4.Text = "定时发采集指令线程池";
             // 
             // btnBinterval
             // 

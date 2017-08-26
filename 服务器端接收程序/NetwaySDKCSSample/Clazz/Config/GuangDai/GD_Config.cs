@@ -40,6 +40,7 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                             GD_Station GD_station = new GD_Station();
                             GD_station.tests = new List<XML_Test>();
                             GD_station.dbName = _org.dbname;
+                            GD_station.OrgId = _org.orgid;
                             GD_station.name = item.name;
                             GD_station.stationId = item.id;
                             try
