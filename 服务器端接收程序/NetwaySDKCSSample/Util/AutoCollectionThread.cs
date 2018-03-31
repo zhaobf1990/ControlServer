@@ -129,7 +129,7 @@ namespace 服务器端接收程序.MyForm.GPRSControl
                                 while (modbusReturn.success == false && count < SysConfig.userProfile.ExecuteFailureCount)
                                 {
                                     modbusReturn.clear();
-                                    LogMg.AddDebug(string.Format("1开始接收  时间:{0},站点:{1} tel:{2},testid:{3}", DateTime.Now.ToString(), client.Name, client.TelOrGprsId.ToString(), test.TestId));
+                                    LogMg.AddDebug(string.Format("开始接收  时间:{0},站点:{1} tel:{2},testid:{3}", DateTime.Now.ToString(), client.Name, client.TelOrGprsId.ToString(), test.TestId));
                                     modbus.readdata(client.Protocol, client.socket, client.TelOrGprsId, test.Address, test.RegisterNo, test.FunctionCode, test.DataType, test.DecodeOrder, test.ReceiveTimeout, modbusReturn);
                                     count++;
                                 }
