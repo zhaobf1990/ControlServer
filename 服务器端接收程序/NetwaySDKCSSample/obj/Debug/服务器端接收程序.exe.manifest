@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Utility.dll" size="12288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Utility.dll" size="12800">
       <assemblyIdentity name="Utility" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qQJuO+4o3R0kh+YtvMaZCQWin9Q=</dsig:DigestValue>
+        <dsig:DigestValue>G5QYz9Y9+RPdSwl+ZZjNdvBSkvA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>zXi2oGXDZelkuWKWkLQDwJE64gY=</dsig:DigestValue>
+        <dsig:DigestValue>QCZt+jqwVeGQ2FRQ3E+PMQa8iDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,13 +122,13 @@
       <dsig:DigestValue>++oT3RyAlq4Bpp2XdkClVvYKLuA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Config\SysConfig.xml" size="2645882" writeableType="applicationData">
+  <file name="Config\SysConfig.xml" size="2679115" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>3gQH1FTaqBpXEu42b3QmLOQPvmw=</dsig:DigestValue>
+      <dsig:DigestValue>smSqhbDee6lPPGUCG4iqsVlBFeU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MyForm\GPRSControl\说明.txt" size="127">

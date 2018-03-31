@@ -5,3 +5,7 @@
 **/log/
 **/sunda_log/
 **/bin/Debug/
+**/DBUtility/bin/
+**/DBUtility/obj/
+**/bin/Debug/*.pdb
+**/bin/Debug/*.exe
