@@ -1,0 +1,11 @@
+**/out/
+**/target/
+*.class
+**/Log/
+**/log/
+**/sunda_log/
+**/Debug/*.pdb
+**/Debug/*.exe
+**/Debug/*.application
+**/Debug/*.manifest
+**/Debug/*.cache

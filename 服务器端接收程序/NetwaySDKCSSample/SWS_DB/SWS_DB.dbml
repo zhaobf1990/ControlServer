@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SWS_DB" Class="SWS_DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER1;Initial Catalog=SWS_DB;User ID=sa" SettingsObjectName="服务器端接收程序.Properties.Settings" SettingsPropertyName="SWS_DBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.org" Member="org">
+    <Type Name="org">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="orgid" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="smallname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="manager" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="highdept" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="highmanager" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="hightel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="dbip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="dbname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="webip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="videoip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="videotype" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="projectnum" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="org_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.guangdai_station_link" Member="guangdai_station_link">
+    <Type Name="guangdai_station_link">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wsid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="db_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="station_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
