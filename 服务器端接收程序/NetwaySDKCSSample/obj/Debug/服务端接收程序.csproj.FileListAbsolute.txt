@@ -885,3 +885,7 @@ E:\数据传输\综合模块\服务器端V1.4.4加广岱设备的控制\服务�
 E:\数据传输\综合模块\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.application
 E:\数据传输\综合模块\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.exe
 E:\数据传输\综合模块\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.pdb
+E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.Launch.resources
+\\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\bin\Debug\服务器端接收程序.exe.config
+\\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.exe
+\\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\NetwaySDKCSSample\obj\Debug\服务器端接收程序.pdb

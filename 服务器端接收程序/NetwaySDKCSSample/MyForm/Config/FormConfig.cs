@@ -143,15 +143,15 @@ namespace 服务器端接收程序.MyForm.Config
                 // GPRSControl.GPRSControlNetServer.StartListen("192.168.1.8","5678");
                 GPRSControl.DTU_NetServer.StartListen(txt_ServerIp.Text.Trim(), txt_port_DTU.Text.Trim());
 
-                //V88CommunicationThread.getInstance().Start();
-                //UdpV88Server.getInstance().StartListen(txt_ServerIp.Text.Trim(), txt_port_udp.Text.Trim());
+                V88CommunicationThread.getInstance().Start();
+                UdpV88Server.getInstance().StartListen(txt_ServerIp.Text.Trim(), txt_port_udp.Text.Trim());
 
                 //心跳线程开启
                 HeartbeatThread.Start();
                 //主动发指令的线程开启
-              ControlCommandThread.Start();
+                ControlCommandThread.Start();
                 //定时发指令的线程开启
-              AutoCollectionThread.Start(); 
+                AutoCollectionThread.Start();
 
                 save();
 
@@ -295,10 +295,11 @@ namespace 服务器端接收程序.MyForm.Config
         private void btn_ReadConfig_Click(object sender, EventArgs e)
         {
             MessageBox.Show("开始读取配置");
-            new Thread(new ThreadStart(readConfig)).Start(); 
+            new Thread(new ThreadStart(readConfig)).Start();
         }
 
-        private void readConfig() {
+        private void readConfig()
+        {
             SysConfig.ReadConfig();
             BeginInvoke(new Action<String>(showMessageBox), "读取配置成功");
         }

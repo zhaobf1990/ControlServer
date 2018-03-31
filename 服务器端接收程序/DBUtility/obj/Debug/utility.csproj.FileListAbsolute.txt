@@ -122,7 +122,6 @@ D:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility
 D:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
 E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\bin\Debug\Utility.dll
 E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\bin\Debug\Utility.pdb
-E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
 E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.dll
 E:\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.pdb
 D:\商达\20161210\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\bin\Debug\Utility.dll

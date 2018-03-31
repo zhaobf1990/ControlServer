@@ -67,6 +67,8 @@ namespace 服务器端接收程序.Util
             {
                 //   GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently("160512027", 1, "01030098000105E5"); 
                 modbusReturn.sendMsg = message;
+                modbusReturn.wscid = wscId;
+                modbusReturn.address = (int)address;
                 String hexCommand = CommonUtil.byteToHexStr(message, "");
                 GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently(wscId, (int)address, hexCommand);
                 modbusReturn.RecMsg = response;
@@ -205,6 +207,9 @@ namespace 服务器端接收程序.Util
             try
             {
                 modbusReturn.sendMsg = message;
+                modbusReturn.wscid = wscId;
+                modbusReturn.address = (int)address;
+
                 GuangDaiService.transmitTransparentlyResult result = ws.transmitTransparently(wscId, (int)address, CommonUtil.byteToHexStr(message, ""));
                 modbusReturn.RecMsg = result.value;
                 if (result.result == true)

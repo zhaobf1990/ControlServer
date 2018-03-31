@@ -51,6 +51,8 @@ namespace 服务器端接收程序.Util
         /// 值
         /// </summary>
         public long value { get; set; }
+        public String wscid { get; set; }
+        public int  address { get; set; }
 
         public ModbusReturn()
         {
@@ -67,8 +69,8 @@ namespace 服务器端接收程序.Util
 
         public override string ToString()
         {
-            return String.Format("执行结果:【{0}】  持续时间【{1}】  发送时间:【{2}】  发送数据:【{3}】   接收时间:【{4}】   接收数据:【{5}】  错误消息:【{6}】   值:【{7}】"
-                , success, duration, sendTime.ToString(), CommonUtil.byteToHexStr(sendMsg), _recTime.ToString(), CommonUtil.byteToHexStr(RecMsg), ErrorMsg, value);
+            return String.Format("执行结果:【{0}】  持续时间【{1}】  发送时间:【{2}】  发送数据:【{3}】 address:【{4}】  wscid:【{5}】  接收时间:【{6}】   接收数据:【{7}】  错误消息:【{8}】   值:【{9}】"
+                , success, duration, sendTime.ToString(), CommonUtil.byteToHexStr(sendMsg),address,wscid, _recTime.ToString(), CommonUtil.byteToHexStr(RecMsg), ErrorMsg, value);
         }
     }
 }
