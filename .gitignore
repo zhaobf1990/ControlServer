@@ -8,4 +8,4 @@
 **/DBUtility/bin/
 **/DBUtility/obj/
 **/bin/Debug/*.pdb
-**/bin/Debug/*.exe
+**/Debug/*.exe
