@@ -1,0 +1,5 @@
+E:\智能水务系统\客户端\客户端发送程序\DBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\智能水务系统\客户端\客户端发送程序\DBUtility\bin\Debug\DBUtility.dll
+E:\智能水务系统\客户端\客户端发送程序\DBUtility\bin\Debug\DBUtility.pdb
+E:\智能水务系统\客户端\客户端发送程序\DBUtility\obj\Debug\DBUtility.dll
+E:\智能水务系统\客户端\客户端发送程序\DBUtility\obj\Debug\DBUtility.pdb
