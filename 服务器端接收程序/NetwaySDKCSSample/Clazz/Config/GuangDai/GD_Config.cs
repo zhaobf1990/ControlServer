@@ -108,7 +108,14 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                 for (int i = 0; i < gd_stations.Count; i++)
                 {
                     GD_Station item = gd_stations[i];
-                    log.Info("orgId: " + item.OrgId + "  dbName: " + item.dbName + " stationId: " + item.stationId + " station.name" + item.name);
+                    String testids = "";
+                    if(item.tests!=null)
+                        foreach (XML_Test test in item.tests)
+                        {
+                            testids += test.TestId;
+                        }
+
+                    log.Info("orgId: " + item.OrgId + "  dbName: " + item.dbName + "   wscId: " + item.wscId + "  stationId: " + item.stationId + " station.name" + item.name + "   testids: " + testids);
                 }
                 this.GD_Stations = gd_stations;
                
