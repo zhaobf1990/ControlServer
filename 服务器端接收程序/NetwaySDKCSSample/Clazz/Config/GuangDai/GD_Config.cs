@@ -5,11 +5,14 @@ using System.Text;
 using Utility;
 using 服务器端接收程序.SWS_DB;
 using 服务器端接收程序.Config;
+using log4net;
+using 服务器端接收程序.Util;
 
 namespace 服务器端接收程序.Clazz.Config.GuangDai
 {
     public class GD_Config
     {
+        private static ILog log = LogManager.GetLogger(typeof(GuangDaiCommunicationModbus));
         public List<GD_Station> GD_Stations { get; set; }
 
 
@@ -28,15 +31,18 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                 SWS_DBDataContext SWS_DB = new SWS_DBDataContext(ConnectStringHelper.GetConnection(SysConfig.userProfile.DbAddress, SysConfig.userProfile.DbName, SysConfig.userProfile.DbUserName, SysConfig.userProfile.DbPassword));
                 List<guangdai_station_link> links = SWS_DB.guangdai_station_link.ToList();
                 List<SWS_DB.org> db_orgs = SWS_DB.org.Where(c => c.org_type == 2 || c.org_type == 3).ToList();
+                log.Info("=========================================================================");
                 foreach (SWS_DB.org _org in db_orgs)
                 {
                     try
                     {
+                        log.Info("_org.dbname: " + _org.dbname + "   org.orgid: " + _org.orgid);
                         SWSDataContext country_db = new SWSDataContext(ConnectStringHelper.GetConnection(SysConfig.userProfile.DbAddress, _org.dbname, SysConfig.userProfile.DbUserName, SysConfig.userProfile.DbPassword));
                         List<country_station> stations = country_db.ExecuteQuery<country_station>("select id,name from country_station where deleteflag=0 and jiankongyitiji_version=5").ToList();
                         //List<country_station> stations = country_db.country_station.Where(c => c.deleteflag == false && c.jiankongyitiji_version == 5).ToList();
                         foreach (country_station item in stations)
                         {
+                            log.Info("station.name: " + item.name + "   station.id: " + item.id);
                             GD_Station GD_station = new GD_Station();
                             GD_station.tests = new List<XML_Test>();
                             GD_station.dbName = _org.dbname;
@@ -95,13 +101,21 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                     }
                     catch (Exception ex)
                     {
+                        LogMg.AddError(ex);
                     }
                 }
                 this.GD_Stations = gd_stations;
+                log.Info("-----------------------------");
+                foreach (GD_Station item in gd_stations)
+                {
+                    log.Info("orgId: " + item.OrgId + "  dbName: " + item.dbName + " stationId: " + item.stationId + " station.name" + item.name);
+                }
+
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                LogMg.AddError(ex);
                 return false;
             }
         }
