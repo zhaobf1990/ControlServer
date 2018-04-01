@@ -104,12 +104,14 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                         LogMg.AddError(ex);
                     }
                 }
-                this.GD_Stations = gd_stations;
                 log.Info("-----------------------------");
-                foreach (GD_Station item in gd_stations)
+                for (int i = 0; i < gd_stations.Count; i++)
                 {
+                    GD_Station item = gd_stations[i];
                     log.Info("orgId: " + item.OrgId + "  dbName: " + item.dbName + " stationId: " + item.stationId + " station.name" + item.name);
                 }
+                this.GD_Stations = gd_stations;
+               
 
                 return true;
             }
