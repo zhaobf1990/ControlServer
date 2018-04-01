@@ -144,4 +144,3 @@ E:\数据传输\综合模块\服务器端V1.4.4加广岱设备的控制\服务�
 \\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\bin\Debug\Utility.pdb
 \\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.dll
 \\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.pdb
-\\Mac\Home\Desktop\服务器端V1.4.4加广岱设备的控制\服务器端接收程序\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache

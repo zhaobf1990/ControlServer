@@ -9,3 +9,4 @@
 **/Debug/*.application
 **/Debug/*.manifest
 **/Debug/*.cache
+**/Utility.dll

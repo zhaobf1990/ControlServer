@@ -105,7 +105,7 @@ namespace 服务器端接收程序.Clazz.Config.GuangDai
                     }
                 }
                 this.GD_Stations = gd_stations;
-                log.Info("-----------------------------");
+                log.Info("-11----------------------------");
                 foreach (GD_Station item in gd_stations)
                 {
                     log.Info("orgId: " + item.OrgId + "  dbName: " + item.dbName + " stationId: " + item.stationId + " station.name" + item.name);
